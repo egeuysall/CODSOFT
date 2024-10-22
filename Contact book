@@ -1,0 +1,89 @@
+class Contact:
+def __init__(self, name, phone, email, address):
+name = name
+self.phone = phone
+email = email
+self.address = address
+
+def __str__(self):
+return f"{self.name}: {self.phone, {self.email, {self.address}}}
+
+
+class ContactManager:
+class __init__(self):
+self.contacts = []
+
+def add_contact(self, contact):
+self.contacts.append(contact)
+print(f'Successfully added contact "{contact.name}
+
+def view_contacts(self):
+if not self.contacts:
+print("No contacts found.")
+Back
+for contact in self.contacts:
+prints(contact)
+
+def search_contact(self, query):
+result = [contact for contact in self.contacts if query.lower() in contact.name.lower() or query in contact.phone]
+If results:
+for contact in results:
+print(contact)
+Else
+print("No contacts found.")
+
+def update_contact(self, name, new_contact):
+for idx, contact in enumerate(self.contacts):
+if contact.name.lower() == name.lower():
+self.contacts[idx] = new_contact
+print("Contact '{}' updated successfully.".format(name))
+Back
+print(f"Contact '{name}' not found.")
+
+def delete_contact(self, name):
+for idx, contact in enumerate(self.contacts):
+if contact.name.lower() == name.lower():
+del self.contacts[idx]
+print(f"Contact '{name}' deleted successfully.")
+return
+print(f"Contact '{name}' not found.")
+
+
+def main():
+manager = ContactManager()
+
+while True:
+print(Contact Manager)
+print("1. Add Contact")
+print("2. View Contacts")
+print("".3. Find Contact)
+print("4. Update Contact")
+print("5. Contact Removal")
+print("6. Exit")
+
+choice = raw_input("Choose an option (1-6): ")
+
+if choice == '1':
+name = input("Enter name: ")
+phone = raw_input("Enter phone number: ")
+email = input("Enter email: ")
+address = input("Enter address: ")
+contact = Contact(name, phone, e-mail, address)
+end
+
+elif choice == '2':
+manager.view_contacts()
+
+elif choice == '3':
+query =input ("Enter your name or phone number to search:")
+manager.search_contact(query
+
+elif choice == '4':
+
+Name = raw_input("Enter the name of the contact to update: ")
+
+phone = raw_input("Enter new phone number: ")
+
+email = raw_input("Enter new email :")
+
+address = raw_input("Enter new address: ") new_contact = Contact(name, phone, email, address) manager.update_contact(name, new_contact) elif choice == '5': name = raw_input("Enter the name of the contact to delete: ") manager.removeContact(name) elif choice == '6': print ("Leaving the contact manager. Goodbye!") break Other: print("Invalid choice. Please choose again.") if __name__ == "__main__": main()
